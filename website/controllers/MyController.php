@@ -1,6 +1,10 @@
 <?php
 
-class MyController extends Pimcore_Controller_Action_Frontend {
+
+use Website\Controller\Action;
+use Pimcore\Model\Asset;
+
+class MyController extends Action {
 
     public function defaultAction () {
         $this->enableLayout();
