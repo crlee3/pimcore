@@ -1,8 +1,5 @@
 
 # remove this for your own development
-website/
-tools/
-plugins/
 
 # tests
 tests/output/*
