@@ -6,6 +6,6 @@
 </head>
 
 <body>
-<?= $this->layout()->game_content ?>
+<?= $this->layout()->phaser ?>
 </body>
 </html>

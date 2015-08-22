@@ -4,7 +4,7 @@
 use Website\Controller\Action;
 use Pimcore\Model\Asset;
 
-class MyController extends Action {
+class PhaserController extends Action {
 
     public function defaultAction () {
         $this->enableLayout();
