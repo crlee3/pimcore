@@ -6,6 +6,7 @@
 </head>
 
 <body>
+TESTING!
 <?= $this->layout()->phaser ?>
 </body>
 </html>
