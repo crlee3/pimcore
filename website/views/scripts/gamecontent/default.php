@@ -4,5 +4,5 @@
 
 <?php while ($this->block("contentblock")->loop()) { ?>
     <h2><?= $this->input("subline"); ?></h2>
-    <?= $this->wysiwyg("game_content"); ?>
+    <?= $this->wysiwyg("content"); ?>
 <?php } ?>
