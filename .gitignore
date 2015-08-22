@@ -1,5 +1,11 @@
 
 # remove this for your own development
+website/var/versions/*
+website/var/tmp/*
+website/var/cache/*
+website/var/log/*
+website/var/cache/*
+website/var/recyclebin/*
 
 # tests
 tests/output/*
