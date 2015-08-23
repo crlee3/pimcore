@@ -121,7 +121,7 @@ window.onload = function() {
         game.physics.arcade.collide(player, platforms);
 
         //  Reset the players velocity (movement)
-        player.body.velocity.x = 0;
+        // player.body.velocity.x = 0;
 
         if (cursors.left.isDown) {
 
