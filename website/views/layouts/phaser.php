@@ -53,6 +53,9 @@ window.onload = function() {
 
     var stars;
 
+    var star_count = 12;
+    var stars_collected;
+
     // This function is called before the create function and allows us to prepare certain things for the game process
     function preload () {
 
@@ -123,7 +126,7 @@ window.onload = function() {
         stars.enableBody = true;
 
         //  Here we'll create 12 of them evenly spaced apart
-        for (var i = 0; i < 12; i++)
+        for (var i = 0; i < star_count; i++)
         {
             //  Create a star inside of the 'stars' group
             var star = stars.create(i * 70, 0, 'star');
@@ -141,6 +144,10 @@ window.onload = function() {
     }
 
     function update () {
+
+        if (stars_collected > 11) {
+            alert("YOU WIN!");
+        }
 
         // We use this to check game input during the update function.
         // cursors = game.input.keyboard.createCursorKeys();
@@ -182,7 +189,7 @@ window.onload = function() {
         if (cursors.up.isDown && player.body.touching.down){
 
            player.body.velocity.y = -350;
-           
+
         }
 
     }
@@ -191,6 +198,7 @@ window.onload = function() {
 
         // Removes the star from the screen
         star.kill();
+        stars_collected += 1;
 
     }
 };
