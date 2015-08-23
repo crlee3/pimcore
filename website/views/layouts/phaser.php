@@ -59,6 +59,12 @@ window.onload = function() {
         logo.anchor.setTo(0.5, 0.5);
 
     }
+    
+    function update () {
+    	
+    	
+    	
+    }
 
 };
 
