@@ -56,6 +56,8 @@ window.onload = function() {
     var star_count = 12;
     var stars_collected = 0;
 
+    var player_wins = false;
+
     // This function is called before the create function and allows us to prepare certain things for the game process
     function preload () {
 
@@ -145,8 +147,9 @@ window.onload = function() {
 
     function update () {
 
-        if (stars_collected > 11) {
+        if (stars_collected > 11 && player_wins == false) {
             alert("YOU WIN!");
+            player_wins = true;
         }
 
         // We use this to check game input during the update function.
@@ -199,7 +202,6 @@ window.onload = function() {
         // Removes the star from the screen
         star.kill();
         stars_collected += 1;
-        console.log(stars_collected);
 
     }
 };
