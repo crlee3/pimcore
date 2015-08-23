@@ -1,11 +1,16 @@
 
-# remove this for your own development
+# Lots of stuff not needed for a clean state will persist in dir as long as no rebase
 website/var/versions/*
 website/var/tmp/*
 website/var/cache/*
 website/var/log/*
 website/var/cache/*
 website/var/recyclebin/*
+
+# Dont track Codiad because its its own separate git repo
+Codiad
+Codiad/
+Codiad/*
 
 # tests
 tests/output/*
