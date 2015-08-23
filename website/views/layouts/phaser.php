@@ -47,11 +47,9 @@ window.onload = function() {
 
     var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update, listener: listener });
 
-    var platforms;
-
     function preload () {
 
-        // game.load.image('logo', '/website/static/phaser/img/phaser.png');
+        game.load.image('logo', '/website/static/phaser/img/phaser.png');
 
         game.load.image('sky', '/website/static/phaser/img/sky.png');
         game.load.image('ground', '/website/static/phaser/img/platform.png');
@@ -65,12 +63,15 @@ window.onload = function() {
         // var logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
         // logo.anchor.setTo(0.5, 0.5);
 
-        //  We're going to be using physics, so enable the Arcade Physics system
-        game.physics.startSystem(Phaser.Physics.ARCADE);
-
-        //  A simple background for our game
         game.add.sprite(0, 0, 'sky');
+        game.add.sprite(0, 0, 'star');
 
+        // //  We're going to be using physics, so enable the Arcade Physics system
+        // game.physics.startSystem(Phaser.Physics.ARCADE);
+        //
+        // //  A simple background for our game
+        // game.add.sprite(0, 0, 'sky');
+        //
         // //  The platforms group contains the ground and the 2 ledges we can jump on
         // platforms = game.add.group();
         //
@@ -94,6 +95,7 @@ window.onload = function() {
         // ledge = platforms.create(-150, 250, 'ground');
         //
         // ledge.body.immovable = true;
+
     }
 
     function update () {
