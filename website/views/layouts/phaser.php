@@ -52,9 +52,10 @@ window.onload = function() {
     var cursors;
 
     var stars;
+    var score = 0;
+    var scoreText;
 
     var star_count = 12;
-    var stars_collected = 0;
 
     var player_wins = false;
 
@@ -140,6 +141,9 @@ window.onload = function() {
             star.body.bounce.y = 0.7 + Math.random() * 0.2;
         }
 
+        //  The score
+        scoreText = game.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: '#000' });
+
         //  Our controls.
         cursors = game.input.keyboard.createCursorKeys();
 
@@ -147,7 +151,7 @@ window.onload = function() {
 
     function update () {
 
-        if (stars_collected > 11 && player_wins == false) {
+        if (score > 101 && player_wins == false) {
             alert("YOU WIN!");
             player_wins = true;
         }
@@ -201,7 +205,9 @@ window.onload = function() {
 
         // Removes the star from the screen
         star.kill();
-        stars_collected += 1;
+
+        score += 10;
+        scoreText.text = 'Score: ' + score;
 
     }
 };
