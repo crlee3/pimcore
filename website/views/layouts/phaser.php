@@ -47,6 +47,12 @@ window.onload = function() {
     // This is our game object. We will use this game object with great fun!
     var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
+    var player;
+    var platforms;
+    var cursors;
+
+    var stars;
+
     // This function is called before the create function and allows us to prepare certain things for the game process
     function preload () {
 
@@ -110,15 +116,41 @@ window.onload = function() {
         player.animations.add('left', [0, 1, 2, 3], 10, true);
         player.animations.add('right', [5, 6, 7, 8], 10, true);
 
+        //  Finally some stars to collect
+        stars = game.add.group();
+
+        //  We will enable physics for any star that is created in this group
+        stars.enableBody = true;
+
+        //  Here we'll create 12 of them evenly spaced apart
+        for (var i = 0; i < 12; i++)
+        {
+            //  Create a star inside of the 'stars' group
+            var star = stars.create(i * 70, 0, 'star');
+
+            //  Let gravity do its thing
+            star.body.gravity.y = 300;
+
+            //  This just gives each star a slightly random bounce value
+            star.body.bounce.y = 0.7 + Math.random() * 0.2;
+        }
+
+        //  Our controls.
+        cursors = game.input.keyboard.createCursorKeys();
+
     }
 
     function update () {
 
         // We use this to check game input during the update function.
-        cursors = game.input.keyboard.createCursorKeys();
+        // cursors = game.input.keyboard.createCursorKeys();
 
         //  Collide the player and the stars with the platforms
         game.physics.arcade.collide(player, platforms);
+        game.physics.arcade.collide(stars, platforms);
+
+        //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
+        game.physics.arcade.overlap(player, stars, collectStar, null, this);
 
         //  Reset the players velocity (movement)
         player.body.velocity.x = 0;
@@ -135,8 +167,8 @@ window.onload = function() {
            //  Move to the right
            player.body.velocity.x = 150;
 
-
            player.animations.play('right');
+
         } else {
 
            //  Stand still
@@ -148,11 +180,19 @@ window.onload = function() {
 
         //  Allow the player to jump if they are touching the ground.
         if (cursors.up.isDown && player.body.touching.down){
+
            player.body.velocity.y = -350;
+           
         }
 
     }
 
+    function collectStar (player, star) {
+
+        // Removes the star from the screen
+        star.kill();
+
+    }
 };
 
 </script>
