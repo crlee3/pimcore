@@ -1,4 +1,4 @@
-<?php $this->layout()->setLayout('standard'); ?>
+<?php $this->layout()->setLayout('phaser'); ?>
 
 <h1><?= $this->input("headline", ["width" => 540]); ?></h1>
 
