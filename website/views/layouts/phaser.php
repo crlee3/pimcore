@@ -54,7 +54,7 @@ window.onload = function() {
     var stars;
 
     var star_count = 12;
-    var stars_collected;
+    var stars_collected = 0;
 
     // This function is called before the create function and allows us to prepare certain things for the game process
     function preload () {
@@ -199,6 +199,7 @@ window.onload = function() {
         // Removes the star from the screen
         star.kill();
         stars_collected += 1;
+        console.log(stars_collected);
 
     }
 };
