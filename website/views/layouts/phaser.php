@@ -55,6 +55,7 @@ window.onload = function() {
     var score = 0;
     var scoreText;
 
+    var per_star_points = 10;
     var star_count = 12;
 
     var player_wins = false;
@@ -151,9 +152,9 @@ window.onload = function() {
 
     function update () {
 
-        if (score > 101 && player_wins == false) {
-            alert("YOU WIN!");
+        if (score >= star_count * per_star_points && player_wins == false) {
             player_wins = true;
+            scoreText.text = 'Score: ' + score + ' YOU WIN DUDE!';
         }
 
         // We use this to check game input during the update function.
@@ -206,7 +207,7 @@ window.onload = function() {
         // Removes the star from the screen
         star.kill();
 
-        score += 10;
+        score += per_star_points;
         scoreText.text = 'Score: ' + score;
 
     }
