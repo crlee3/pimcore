@@ -47,9 +47,6 @@ window.onload = function() {
     // This is our game object. We will use this game object with great fun!
     var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
-    // We use this to check game input during the update function.
-    cursors = game.input.keyboard.createCursorKeys();
-
     // This function is called before the create function and allows us to prepare certain things for the game process
     function preload () {
 
@@ -116,6 +113,9 @@ window.onload = function() {
     }
 
     function update () {
+
+        // We use this to check game input during the update function.
+        cursors = game.input.keyboard.createCursorKeys();
 
         //  Collide the player and the stars with the platforms
         game.physics.arcade.collide(player, platforms);
