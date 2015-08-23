@@ -36,7 +36,6 @@
     $this->headScript()->appendFile('/website/static/lib/magnific/magnific.js');
     $this->headScript()->appendFile('/website/static/lib/video-js/video.js');
     $this->headScript()->appendFile('/website/static/js/srcset-polyfill.min.js');
-    <!-- $this->headScript()->appendFile('/website/static/phaser/js/phaser.min.js'); -->
 
     echo $this->headScript();
 ?>
