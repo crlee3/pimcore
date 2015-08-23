@@ -7,6 +7,6 @@
 
 <body>
 TESTING!
-<?= $this->layout()->phaser ?>
+<?= $this->layout()->content ?>
 </body>
 </html>
