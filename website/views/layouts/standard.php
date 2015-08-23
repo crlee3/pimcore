@@ -6,7 +6,6 @@
 </head>
 
 <body>
-TESTING!
 <?= $this->layout()->content ?>
 </body>
 </html>
