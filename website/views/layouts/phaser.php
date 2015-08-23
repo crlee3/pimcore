@@ -49,26 +49,33 @@ window.onload = function() {
 
     function preload () {
 
-        game.load.image('logo', '/website/static/phaser/img/phaser.png');
+        // game.load.image('logo', '/website/static/phaser/img/phaser.png');
+
+        game.load.image('sky', '/website/static/phaser/img/sky.png');
+        game.load.image('ground', '/website/static/phaser/img/platform.png');
+        game.load.image('star', '/website/static/phaser/img/star.png');
+        game.load.spritesheet('dude', '/website/static/phaser/img/dude.png', 32, 48);
 
     }
 
     function create () {
 
-        var logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
-        logo.anchor.setTo(0.5, 0.5);
+        // var logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
+        // logo.anchor.setTo(0.5, 0.5);
+
+        game.add.sprite(0, 0, 'star');
 
     }
-    
+
     function update () {
-    	
-    	
-    	
+
+
+
     }
 
 	function listener () {
 
-	
+
 	}
 
 };
