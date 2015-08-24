@@ -154,7 +154,7 @@ window.onload = function() {
 
         if (score >= star_count * per_star_points && player_wins == false) {
             player_wins = true;
-            scoreText.text = 'Score: ' + score + ' YOU WIN DUDE!';
+            scoreText.text = 'Score: ' + score + ' YOU ARE A BIG FAT VAGINA!';
         }
 
         // We use this to check game input during the update function.
